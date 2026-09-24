@@ -15,11 +15,11 @@ The pages use the existing publisher and support contact: Baldwin Tree LLC / bal
 
 ## Content sources and review
 
-Lightning Numerology metadata and artwork: Apple App Store ID 6777469900, version 1.1.2, checked September 24, 2026. Existing privacy and terms URLs remain available; advertising disclosures are retained and Game Center references updated. Detailed advertising implementation statements inherited from the previous policy need confirmation against the game's current source before publishing; this repository contains only the website.
+Lightning Numerology metadata and artwork: Apple App Store ID 6777469900, version 1.1.2, checked September 24, 2026. Existing privacy and terms URLs remain available; advertising disclosures are retained and Game Center references updated. The publisher confirmed on September 24, 2026 that the support email is current and the game still uses AdMob with non-personalized ads. Other detailed advertising statements are retained from the existing policy; this repository contains only the website.
 
 KeepSake images: existing app icon and fictional demo screenshots from the local KeepSake project. Its privacy page reflects local storage, iOS on-device transcription, user-directed exports/sharing, system backups, and support correspondence. Terms reference Apple's standard EULA, not a custom replacement license.
 
-Review public legal copy and confirm the support mailbox remains monitored before deployment. Website changes are isolated on `codex/modern-app-website` and have not been published.
+Publisher contact and advertising confirmations were received September 24, 2026. Publication to the existing GitHub Pages site was explicitly approved. The redesign was prepared on `codex/modern-app-website`.
 
 ## Validation
 
