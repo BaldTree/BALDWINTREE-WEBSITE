@@ -1,0 +1,25 @@
+[
+  {
+    "created_at": "2026-09-24T16:18:36.922309Z",
+    "display_name": "Recraft V4.1",
+    "id": "e1947f1f-c1ad-4044-a575-cc9cd58f2baa",
+    "job_type": "recraft_v4_1",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3IubsYNWtvWj7rb9rJemW4LCXPq/hf_20260924_161836_e1947f1f-c1ad-4044-a575-cc9cd58f2baa_min.webp",
+    "params": {
+      "aspect_ratio": "1:1",
+      "background_color": "#183C32",
+      "batch_size": 1,
+      "colors": [
+        "#D7C18E",
+        "#183C32"
+      ],
+      "height": 1024,
+      "model_type": "vector",
+      "prompt": "A single exquisite custom uppercase BT monogram logo for Baldwin Tree, centered large on a solid deep forest green #183C32 square. Flat warm gold #D7C18E lettering. Essential letter construction: capital B at left, capital T at right, fused into ONE elegantly connected ligature. The upper horizontal stroke of the B extends seamlessly rightward into the top crossbar of the T; the T stem descends from that shared upper bar at the right. Clearly readable B with two open counters and clearly readable T, balanced generous negative space. Refined contemporary serif typography, softly curved B bowls, subtle tapered serifs, confident substantial strokes legible as a small website logo. Beautiful precise restrained typography. The shared top stroke is the visual signature. Only the monogram BT, no period, no other words, no tree illustration, no enclosing circle, no mockup, no texture, no metallic lighting, no gradient, no shadow. Flat vector brand mark with wide clear margins.",
+      "resolution": "1k",
+      "width": 1024
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3IubsYNWtvWj7rb9rJemW4LCXPq/hf_20260924_161836_e1947f1f-c1ad-4044-a575-cc9cd58f2baa.svg",
+    "status": "completed"
+  }
+]
