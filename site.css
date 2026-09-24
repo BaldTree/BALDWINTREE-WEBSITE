@@ -8,7 +8,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid #947026;outline-offset:5
 header,main,footer{width:min(1240px,calc(100% - 80px));margin:auto}
 header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:2px}
-.brand-mark{display:block;width:54px;height:54px;flex:none;border-radius:50%}
+.brand-mark{display:block;width:70px;height:70px;flex:none;border-radius:50%}
 .llc{font-size:10px;margin-left:-7px}
 nav{display:flex;align-items:center;gap:28px}
 nav a{font-size:14px;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
