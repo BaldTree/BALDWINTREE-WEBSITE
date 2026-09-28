@@ -39,9 +39,8 @@ em{font-family:Georgia,serif;font-weight:400}
 .section-heading{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:26px}
 .section-heading h2{margin:0;max-width:660px}
 .section-heading>p{font-size:14px;color:var(--muted)}
-.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.app-grid{display:grid;grid-template-columns:minmax(0,760px);justify-content:center;gap:24px}
 .app-card{border-radius:30px;overflow:hidden;padding:32px 32px 0;background:#e1e6d8;position:relative}
-.lightning{background:#eae1ce}
 .card-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:30px}
 .card-top img,.app-icon{border-radius:21px}
 .tag{font-size:10px;letter-spacing:.4px;padding:6px 10px;border:1px solid #9ba995;border-radius:99px}
