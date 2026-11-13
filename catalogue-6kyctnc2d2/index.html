@@ -98,11 +98,11 @@ dialog {
   border: 0; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
-.dlg { display: flex; flex-direction: column; max-height: calc(100vh - 24px); }
+.dlg { display: flex; flex-direction: column; max-height: calc(100vh - 24px); overflow-y: auto; }
 .dlg-head { padding: 20px 20px 12px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; align-items: start; }
 .dlg-head h2 { margin: 0; font-size: 22px; }
 .close { width: 40px; height: 40px; border: 1px solid #cfcfcf; border-radius: 10px; background: var(--paper); font-size: 20px; }
-.lines { list-style: none; margin: 0; padding: 8px 20px; overflow: auto; }
+.lines { list-style: none; margin: 0; padding: 8px 20px; overflow: auto; flex: 0 1 auto; min-height: min(150px, 30vh); }
 .line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .line img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: var(--soft); }
 .line .lname { font-size: 14px; font-weight: 600; line-height: 1.3; }
@@ -115,6 +115,10 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .actions .primary { flex: 1 1 220px; }
 .status { min-height: 20px; margin: 0; font-size: 14px; }
+.steps { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
+.addr-row { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.addr { font-weight: 700; user-select: all; -webkit-user-select: all; overflow-wrap: anywhere; }
+.order-text { width: 100%; min-height: 160px; padding: 10px; border: 1px solid #cfcfcf; border-radius: 10px; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; resize: vertical; }
 .link-button { border: 0; background: none; padding: 0; text-decoration: underline; color: var(--muted); font-size: 14px; justify-self: start; }
 @media (max-width: 560px) {
   header { padding-top: 24px; }
@@ -167,12 +171,17 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     <ul class="lines" id="lines"></ul>
     <div class="dlg-foot">
       <div class="totals"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
-      <p class="note">Shipping depends on how many covers you order and is confirmed by reply. Sending this email is an order request, not a payment.</p>
+      <ol class="steps">
+        <li><strong>Copy your order</strong> with the button below.</li>
+        <li>Start a new email to <span class="addr-row"><span class="addr" data-email></span><button class="link-button" id="copy-address" type="button">Copy address</button></span></li>
+        <li>Paste your order into the email and send it.</li>
+      </ol>
+      <p class="note">Shipping depends on how many covers you order and is confirmed by reply. Your email is an order request, not a payment.</p>
       <div class="actions">
-        <a class="primary" id="send" href="#" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Send order by email</a>
-        <button class="secondary" id="copy" type="button">Copy order</button>
+        <button class="primary" id="copy" type="button">Copy order</button>
       </div>
       <p class="status" id="status" role="status"></p>
+      <textarea class="order-text" id="order-text" readonly hidden aria-label="Your order, ready to copy"></textarea>
       <button class="link-button" id="clear" type="button">Clear order</button>
     </div>
   </div>
@@ -297,7 +306,7 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
 
   const dialog = document.getElementById("dialog");
   function orderText(l, units, sum) {
-    const out = ["Putter head cover order", ""];
+    const out = ["Putter head cover order (" + units + (units === 1 ? " cover" : " covers") + ")", ""];
     for (const x of l) {
       out.push(x.ref + "  " + x.name);
       out.push("   " + x.variant + "  x" + x.n + "  @ " + money(x.price) + " = " + money(x.total));
@@ -315,12 +324,13 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
       '<div><div class="lname">' + esc(x.name) + '</div><div class="lmeta">' + x.ref + ' · ' + esc(x.variant) + ' · ' + money(x.price) + ' each</div></div>' +
       '<div class="right"><strong>' + money(x.total) + '</strong>' + stepper(x.key, esc(x.name + ", " + x.variant)) + '</div></li>').join("");
     document.getElementById("subtotal").textContent = money(sum);
-    const subject = "Putter head cover order (" + units + (units === 1 ? " cover" : " covers") + ")";
-    document.getElementById("send").href =
-      "mailto:" + ORDER_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(orderText(l, units, sum));
+    const box = document.getElementById("order-text");
+    if (!box.hidden) box.value = orderText(l, units, sum);
   }
+  for (const el of document.querySelectorAll("[data-email]")) el.textContent = ORDER_EMAIL;
   document.getElementById("review").addEventListener("click", () => {
     document.getElementById("status").textContent = "";
+    document.getElementById("order-text").hidden = true;
     renderDialog();
     dialog.showModal();
   });
@@ -332,20 +342,35 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
     setQty(b.closest(".stepper").dataset.key, Number(b.dataset.step));
     renderDialog();
   });
-  document.getElementById("send").addEventListener("click", () => {
-    document.getElementById("status").textContent =
-      "Your email app should open with the order filled in. If it doesn't, use Copy order and email it to " + ORDER_EMAIL + ".";
-  });
-  document.getElementById("copy").addEventListener("click", async () => {
-    const { l, units, sum } = summarize();
-    const text = "To: " + ORDER_EMAIL + "\n\n" + orderText(l, units, sum);
-    const status = document.getElementById("status");
+  async function copyText(text) {
     try {
       await navigator.clipboard.writeText(text);
-      status.textContent = "Order copied. Paste it into an email to " + ORDER_EMAIL + ".";
+      return true;
     } catch {
-      status.textContent = "Couldn't copy automatically. Email your order to " + ORDER_EMAIL + ".";
+      return false;
     }
+  }
+  document.getElementById("copy").addEventListener("click", async () => {
+    const { l, units, sum } = summarize();
+    const text = orderText(l, units, sum);
+    const status = document.getElementById("status");
+    const box = document.getElementById("order-text");
+    if (await copyText(text)) {
+      box.hidden = true;
+      status.textContent = "Order copied. Now paste it into a new email to " + ORDER_EMAIL + " and send it.";
+    } else {
+      // Some browsers block copying; show the text so it can be selected and copied by hand.
+      box.value = text;
+      box.hidden = false;
+      box.focus();
+      box.select();
+      status.textContent = "Select all of the text below, copy it, and paste it into an email to " + ORDER_EMAIL + ".";
+    }
+  });
+  document.getElementById("copy-address").addEventListener("click", async () => {
+    document.getElementById("status").textContent = (await copyText(ORDER_EMAIL))
+      ? ORDER_EMAIL + " copied."
+      : "Copy the address by hand: " + ORDER_EMAIL;
   });
   document.getElementById("clear").addEventListener("click", () => {
     if (!confirm("Clear every item from your order?")) return;
