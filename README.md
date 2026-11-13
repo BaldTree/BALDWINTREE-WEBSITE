@@ -11,7 +11,7 @@ Preview: `python3 -m http.server 8877 --bind 127.0.0.1`.
 - Support: https://baldwintreeapps.com/keepsake-support.html
 - Terms: https://baldwintreeapps.com/keepsake-terms.html
 
-The pages use the existing publisher and support contact: Baldwin Tree LLC / baldtreesupport@protonmail.com. KeepSake is marked coming soon until a public App Store URL is available. Add the published privacy link inside the iOS app and enter the public URLs in App Store Connect. These pages do not complete App Store privacy declarations or guarantee review approval.
+The pages use the existing publisher and support contact: Baldwin Tree LLC / baldtreesupport@protonmail.com. KeepSake is available on the [App Store](https://apps.apple.com/us/app/keepsake-golden-memories/id6813165916). Add the published privacy link inside the iOS app and enter the public URLs in App Store Connect. These pages do not complete App Store privacy declarations or guarantee review approval.
 
 ## Content sources and review
 
