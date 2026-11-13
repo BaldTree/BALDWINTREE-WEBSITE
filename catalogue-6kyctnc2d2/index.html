@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noimageindex, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Putter Head Cover Catalogue</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --soft: #f6f6f6;
+  --paper: #ffffff;
+  --accent: #1a1a1a;
+  --focus: #2563eb;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+header { padding: 40px 0 8px; }
+h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; letter-spacing: -0.01em; }
+.terms { margin: 0; color: var(--muted); font-size: 14px; max-width: 760px; }
+.tools {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  padding: 14px 16px; background: var(--paper); border-bottom: 1px solid var(--line);
+}
+.tools input[type="search"] {
+  flex: 1 1 260px; min-width: 0; height: 44px; padding: 0 14px;
+  border: 1px solid #cfcfcf; border-radius: 10px; background: var(--paper);
+}
+.tools select, .tools .toggle {
+  height: 44px; padding: 0 12px; border: 1px solid #cfcfcf; border-radius: 10px; background: var(--paper);
+}
+.toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.count { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+.grid {
+  list-style: none; margin: 16px 0 140px; padding: 0;
+  display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper);
+}
+.card.picked { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.photo { aspect-ratio: 1; background: var(--soft); }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.ref { margin: 0; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.name { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.3; }
+.variants { list-style: none; margin: auto 0 0; padding: 0; border-top: 1px solid var(--line); }
+.variant {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+}
+.variant:last-child { border-bottom: 0; padding-bottom: 0; }
+.vname { font-size: 14px; overflow-wrap: anywhere; }
+.price { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stepper { display: inline-flex; align-items: center; border: 1px solid #cfcfcf; border-radius: 10px; }
+.stepper button {
+  width: 36px; height: 36px; border: 0; background: none; font-size: 20px; line-height: 1;
+  border-radius: 9px;
+}
+.stepper button:disabled { color: #c4c4c4; cursor: default; }
+.stepper output { min-width: 24px; text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+.empty { padding: 48px 0; text-align: center; color: var(--muted); }
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  background: rgba(255, 255, 255, 0.97); border-top: 1px solid var(--line);
+  padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+}
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.summary { font-variant-numeric: tabular-nums; }
+.summary strong { font-size: 18px; }
+.summary span { display: block; color: var(--muted); font-size: 13px; }
+.primary {
+  height: 48px; padding: 0 22px; border: 0; border-radius: 12px;
+  background: var(--accent); color: #fff; font-weight: 600;
+}
+.primary:disabled { background: #bdbdbd; cursor: default; }
+.secondary {
+  height: 48px; padding: 0 18px; border: 1px solid #cfcfcf; border-radius: 12px; background: var(--paper); font-weight: 600;
+}
+dialog {
+  width: min(640px, calc(100% - 24px)); max-height: calc(100% - 24px); padding: 0;
+  border: 0; border-radius: 16px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+.dlg { display: flex; flex-direction: column; max-height: calc(100vh - 24px); }
+.dlg-head { padding: 20px 20px 12px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.dlg-head h2 { margin: 0; font-size: 22px; }
+.close { width: 40px; height: 40px; border: 1px solid #cfcfcf; border-radius: 10px; background: var(--paper); font-size: 20px; }
+.lines { list-style: none; margin: 0; padding: 8px 20px; overflow: auto; }
+.line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.line img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; background: var(--soft); }
+.line .lname { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.line .lmeta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.line .right { display: flex; flex-direction: column; align-items: end; gap: 6px; }
+.dlg-foot { padding: 14px 20px 20px; border-top: 1px solid var(--line); display: grid; gap: 12px; }
+.totals { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+.totals strong { font-size: 20px; }
+.note { margin: 0; color: var(--muted); font-size: 13px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.actions .primary { flex: 1 1 220px; }
+.status { min-height: 20px; margin: 0; font-size: 14px; }
+.link-button { border: 0; background: none; padding: 0; text-decoration: underline; color: var(--muted); font-size: 14px; justify-self: start; }
+@media (max-width: 560px) {
+  header { padding-top: 24px; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .card { flex-direction: row; }
+  .photo { width: 112px; height: 112px; flex: none; align-self: flex-start; margin: 10px 0 10px 10px; border-radius: 10px; overflow: hidden; }
+  .body { padding: 10px 12px 12px; }
+  .name { font-size: 15px; }
+  .variant { grid-template-columns: minmax(0, 1fr) auto; }
+  .variant .stepper { grid-column: 1 / -1; justify-self: end; }
+  .summary strong { font-size: 16px; }
+  .primary { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Putter Head Cover Catalogue</h1>
+  <p class="terms">Prices in USD, tax and shipping excluded. Shipping rates vary with order quantity and are confirmed by email. Photos are examples; choose by variant. Catalogue checked 12 Nov 2026; availability is confirmed with your order.</p>
+</header>
+<div class="tools wrap" role="search">
+  <label class="visually-hidden" for="search" style="position:absolute;left:-9999px">Search the catalogue</label>
+  <input id="search" type="search" placeholder="Search by name, item or putter type" autocomplete="off">
+  <label for="sort" style="position:absolute;left:-9999px">Sort</label>
+  <select id="sort">
+    <option value="ref">Item number</option>
+    <option value="price-asc">Price: low to high</option>
+    <option value="price-desc">Price: high to low</option>
+    <option value="name">Name</option>
+  </select>
+  <button id="only-picked" class="toggle" type="button" aria-pressed="false">Selected only</button>
+</div>
+<main class="wrap">
+  <p class="count" id="count" aria-live="polite"></p>
+  <ul class="grid" id="grid"></ul>
+  <p class="empty" id="empty" hidden>No head covers match your search.</p>
+</main>
+<div class="bar" role="region" aria-label="Your order">
+  <div class="wrap">
+    <div class="summary" id="summary" aria-live="polite"><strong>No items yet</strong><span>Choose quantities to build your order</span></div>
+    <button class="primary" id="review" type="button" disabled>Review order</button>
+  </div>
+</div>
+<dialog id="dialog" aria-labelledby="dlg-title">
+  <div class="dlg">
+    <div class="dlg-head">
+      <div><h2 id="dlg-title">Your order</h2><p class="note" id="dlg-sub"></p></div>
+      <button class="close" id="close" type="button" aria-label="Close">×</button>
+    </div>
+    <ul class="lines" id="lines"></ul>
+    <div class="dlg-foot">
+      <div class="totals"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+      <p class="note">Shipping depends on how many covers you order and is confirmed by reply. Sending this email is an order request, not a payment.</p>
+      <div class="actions">
+        <a class="primary" id="send" href="#" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Send order by email</a>
+        <button class="secondary" id="copy" type="button">Copy order</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+      <button class="link-button" id="clear" type="button">Clear order</button>
+    </div>
+  </div>
+</dialog>
+<script type="application/json" id="catalogue">{"rows":[{"key":"BT-020-1","ref":"BT-020","name":"88MPH Headcovers Putter Golf Head Cover","variant":"Mallet Putter","price":1000},{"key":"BT-010-1","ref":"BT-010","name":"Black Lucky Coin Putter Head Cover","variant":"Mallet Putter","price":1000},{"key":"BT-019-1","ref":"BT-019","name":"Black PU Joker Blade Head Cover","variant":"Standard","price":1000},{"key":"BT-021-1","ref":"BT-021","name":"Black Vortex Mallet Putter Golf Headcover","variant":"Standard","price":1000},{"key":"BT-008-1","ref":"BT-008","name":"Black White OD(2-ball) Mallet Putter Head Cover","variant":"Mallet Putter / White","price":1000},{"key":"BT-002-1","ref":"BT-002","name":"Black Wire Mallet Putter Headcovers","variant":"Square Putter","price":1000},{"key":"BT-017-1","ref":"BT-017","name":"Blue Astronauts Putter Head Cover","variant":"Mallet Putter","price":1000},{"key":"BT-012-1","ref":"BT-012","name":"Brown Retro Putter Golf Head Cover","variant":"Blade Putter","price":1000},{"key":"BT-012-2","ref":"BT-012","name":"Brown Retro Putter Golf Head Cover","variant":"Mallet Putter","price":1000},{"key":"BT-012-3","ref":"BT-012","name":"Brown Retro Putter Golf Head Cover","variant":"Mallet(Binal Ear)Putter","price":1000},{"key":"BT-022-1","ref":"BT-022","name":"Brown& Black& White Putter Golf Head Cover","variant":"Mallet Putter","price":1000},{"key":"BT-011-1","ref":"BT-011","name":"Dancing Skull Putter Golf Head Cover","variant":"Square Putter","price":1000},{"key":"BT-023-1","ref":"BT-023","name":"Dark Yellow Brown Bear Putter Golf Headcover","variant":"Single Ear Mallet Putter","price":1000},{"key":"BT-018-1","ref":"BT-018","name":"Flamingo White Golf Mallet Putter Golf Head Cover","variant":"Standard","price":1000},{"key":"BT-009-1","ref":"BT-009","name":"Floral Mallet Putter Head Cover for Heel Shaft Putters","variant":"Standard","price":1000},{"key":"BT-006-1","ref":"BT-006","name":"Green Luck Four-Leaf Clover Putter Golf Headcover","variant":"Blade Putter","price":1000},{"key":"BT-014-1","ref":"BT-014","name":"Hawaii Mallet Heel shafted Green Head Cover","variant":"Standard","price":1000},{"key":"BT-007-1","ref":"BT-007","name":"Legend #24 Putter Head Cover","variant":"Blade Putter","price":1000},{"key":"BT-003-1","ref":"BT-003","name":"Orange Large Mallet Heel shafted Green Printing Head Cover","variant":"Standard","price":1000},{"key":"BT-015-1","ref":"BT-015","name":"Pink Kiss Mallet Heel shafted Green Head Cover","variant":"Standard","price":1000},{"key":"BT-001-1","ref":"BT-001","name":"Pure Black Blue Magnet Blade Putter Cover","variant":"Blade Putter / Blue","price":1000},{"key":"BT-004-1","ref":"BT-004","name":"Scottish tartan mallet Head Cover","variant":"Standard","price":1000},{"key":"BT-016-1","ref":"BT-016","name":"Skull Blade Head Cover","variant":"Standard","price":1000},{"key":"BT-005-1","ref":"BT-005","name":"White Black Square Putter Headcover","variant":"Square Putter / Black","price":1000},{"key":"BT-024-1","ref":"BT-024","name":"White Cat on the Wall Mallet Putter Head Cover","variant":"Blade Putter","price":1000},{"key":"BT-013-1","ref":"BT-013","name":"White Map Pattern PAR Putter Golf Headcover","variant":"Mallet Putter","price":1000},{"key":"BT-025-1","ref":"BT-025","name":"Black Rainbow Coconut Palm Mallet Heel Shafted Putter Head Cover","variant":"Standard","price":1008},{"key":"BT-026-1","ref":"BT-026","name":"Football Mallet Putter Head Cover","variant":"Standard","price":1008},{"key":"BT-027-1","ref":"BT-027","name":"Rose Putter Head Cover","variant":"Mallet Putter","price":1008},{"key":"BT-028-1","ref":"BT-028","name":"Totem Mallet Cover Head Cover","variant":"Standard","price":1019},{"key":"BT-029-1","ref":"BT-029","name":"Yellow PU Birds Blade Head Cover","variant":"Standard","price":1019},{"key":"BT-030-1","ref":"BT-030","name":"Black Godfather Mallet Putter Cover","variant":"Mid-Mallet Putter","price":1026},{"key":"BT-017-2","ref":"BT-017","name":"Blue Astronauts Putter Head Cover","variant":"Blade Putter","price":1026},{"key":"BT-023-2","ref":"BT-023","name":"Dark Yellow Brown Bear Putter Golf Headcover","variant":"Binaural Ear Mid-Mallet Putter (OZ. 1 Body)","price":1026},{"key":"BT-006-2","ref":"BT-006","name":"Green Luck Four-Leaf Clover Putter Golf Headcover","variant":"Square Putter","price":1026},{"key":"BT-031-1","ref":"BT-031","name":"MAGNUM Embroidered Putter Golf Head Cover","variant":"Mallet Putter","price":1026},{"key":"BT-032-1","ref":"BT-032","name":"OZ.1 Mallet Small Mallet Putter Head Cover","variant":"Gray & White","price":1026},{"key":"BT-032-2","ref":"BT-032","name":"OZ.1 Mallet Small Mallet Putter Head Cover","variant":"Silver","price":1026},{"key":"BT-033-1","ref":"BT-033","name":"The Golf Father DF3 Mallet Putter Golf Headcover","variant":"Standard","price":1026},{"key":"BT-034-1","ref":"BT-034","name":"USA Flag DF3 Mallet Putter Golf Head Cover","variant":"Standard","price":1026},{"key":"BT-035-1","ref":"BT-035","name":"White PU Colorful Spider Square Putter Head Cover","variant":"Mallet Putter / Black","price":1026},{"key":"BT-035-2","ref":"BT-035","name":"White PU Colorful Spider Square Putter Head Cover","variant":"Mallet Putter / White","price":1026},{"key":"BT-036-1","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Mallet(Binal Ear)Putter","price":1026},{"key":"BT-036-2","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Mid(Binal Ear)-Mallet Putter","price":1026},{"key":"BT-037-1","ref":"BT-037","name":"Bowling Square Putter Head Cover","variant":"Standard","price":1044},{"key":"BT-038-1","ref":"BT-038","name":"Coconut Mallet Putter Head Cover","variant":"Standard","price":1044},{"key":"BT-039-1","ref":"BT-039","name":"Grim Reaper Golfer DF3 Mallet Putter Cover","variant":"Standard","price":1044},{"key":"BT-040-1","ref":"BT-040","name":"Grim Reaper Golfer Mallet Putter Cover","variant":"Standard","price":1044},{"key":"BT-027-2","ref":"BT-027","name":"Rose Putter Head Cover","variant":"Blade Putter","price":1044},{"key":"BT-041-1","ref":"BT-041","name":"Yellow Black Dog Square Putter Head Cover","variant":"Standard","price":1044},{"key":"BT-042-1","ref":"BT-042","name":"Cartoon Stickers Blade Head Cover","variant":"Standard","price":1060},{"key":"BT-043-1","ref":"BT-043","name":"Black Skull Putter Head Cover","variant":"Mallet Putter","price":1062},{"key":"BT-044-1","ref":"BT-044","name":"BUSHWOOD Blade Putter Head Cover","variant":"Standard","price":1062},{"key":"BT-045-1","ref":"BT-045","name":"Paper Airplane Send It Blue Blade Putter Head Cover","variant":"Standard","price":1062},{"key":"BT-046-1","ref":"BT-046","name":"White Peachy Putter Head Cover","variant":"Standard","price":1076},{"key":"BT-047-1","ref":"BT-047","name":"Basketball Mallet Putter Headcover","variant":"Standard","price":1080},{"key":"BT-048-1","ref":"BT-048","name":"Black Leather Four-Leaf Clover Putter Golf Headcover","variant":"Mallet Putter","price":1080},{"key":"BT-049-1","ref":"BT-049","name":"Brown Bear Large Mallet Putter Head Cover","variant":"Standard","price":1080},{"key":"BT-022-2","ref":"BT-022","name":"Brown& Black& White Putter Golf Head Cover","variant":"Blade Putter","price":1080},{"key":"BT-050-1","ref":"BT-050","name":"Four Leaf OZ.1 Mallet Putter Golf Headcover","variant":"Black","price":1080},{"key":"BT-051-1","ref":"BT-051","name":"Large Semicircle Binaural Magnet Head Cover","variant":"Mallet Putter / Red","price":1080},{"key":"BT-052-1","ref":"BT-052","name":"Pink Crane Blade Putter Head Cover Head Cover","variant":"Standard","price":1080},{"key":"BT-053-1","ref":"BT-053","name":"Soccer Mallet Putter Headcover","variant":"Standard","price":1080},{"key":"BT-054-1","ref":"BT-054","name":"White Four-leaf Clover Mallet Putter Golf Head Cover","variant":"Mallet Putter","price":1080},{"key":"BT-036-3","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Square Putter","price":1080},{"key":"BT-043-2","ref":"BT-043","name":"Black Skull Putter Head Cover","variant":"Blade Putter","price":1098},{"key":"BT-023-3","ref":"BT-023","name":"Dark Yellow Brown Bear Putter Golf Headcover","variant":"Single Ear Square Putter(TP Body)","price":1098},{"key":"BT-055-1","ref":"BT-055","name":"Golf Man Square Putter Head Cover","variant":"Standard","price":1098},{"key":"BT-056-1","ref":"BT-056","name":"Greatest Of All Time Putter Golf Head Cover","variant":"Square Putter","price":1098},{"key":"BT-036-4","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Mallet Putter","price":1098},{"key":"BT-036-5","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Putter","price":1098},{"key":"BT-057-1","ref":"BT-057","name":"Golfer Mallet Head Cover","variant":"Standard","price":1116},{"key":"BT-058-1","ref":"BT-058","name":"Printing Color Head Cover","variant":"Standard","price":1116},{"key":"BT-059-1","ref":"BT-059","name":"Circle Mallet Heel Shafted Putter Cover White Head Cover","variant":"Standard","price":1134},{"key":"BT-060-1","ref":"BT-060","name":"White Aim for Ducks Putter Golf Head Cover","variant":"Mallet(Binal Ear)Putter","price":1134},{"key":"BT-061-1","ref":"BT-061","name":"White Birdie Hunter Square Putter Covers","variant":"Standard","price":1134},{"key":"BT-036-6","ref":"BT-036","name":"White PU Mask Putter Head Cover","variant":"Blade Putter","price":1134},{"key":"BT-062-1","ref":"BT-062","name":"Dollars Blade Head Cover","variant":"Standard","price":1141},{"key":"BT-063-1","ref":"BT-063","name":"Doughnut Mallet Heel shafted Green Embroidery Mallet Putter Cover","variant":"Standard","price":1141},{"key":"BT-064-1","ref":"BT-064","name":"Halloween Blade Head Cover","variant":"Standard","price":1141},{"key":"BT-065-1","ref":"BT-065","name":"Hot Kiss Blade Head Cover","variant":"Standard","price":1141},{"key":"BT-066-1","ref":"BT-066","name":"Pizza Blade Head Cover","variant":"Standard","price":1141},{"key":"BT-067-1","ref":"BT-067","name":"Undersea World Blade Head Cover","variant":"Standard","price":1141},{"key":"BT-020-2","ref":"BT-020","name":"88MPH Headcovers Putter Golf Head Cover","variant":"Square Putter","price":1152},{"key":"BT-068-1","ref":"BT-068","name":"Peach PU leather BIRDIE Embroidery Putter Golf Head Cover","variant":"Mallet Putter","price":1152},{"key":"BT-048-2","ref":"BT-048","name":"Black Leather Four-Leaf Clover Putter Golf Headcover","variant":"Square Putter","price":1170},{"key":"BT-069-1","ref":"BT-069","name":"Coconut DF3 Mallet Putter Golf Headcover","variant":"Standard","price":1170},{"key":"BT-070-1","ref":"BT-070","name":"Colorful Golf Tees Golf Large Mallet Putter Head Cover","variant":"White","price":1170},{"key":"BT-050-2","ref":"BT-050","name":"Four Leaf OZ.1 Mallet Putter Golf Headcover","variant":"White","price":1170},{"key":"BT-071-1","ref":"BT-071","name":"Poker Mallet Head Cover","variant":"Standard","price":1170},{"key":"BT-068-2","ref":"BT-068","name":"Peach PU leather BIRDIE Embroidery Putter Golf Head Cover","variant":"Blade Putter","price":1188},{"key":"BT-072-1","ref":"BT-072","name":"Black Mine Magnetic Single Ear Head Cover Set","variant":"Mallet Putter","price":1224},{"key":"BT-073-1","ref":"BT-073","name":"HOLE IN ONE Golf Blade Putter Head Cover","variant":"Standard","price":1224},{"key":"BT-074-1","ref":"BT-074","name":"King Blade Cover Head Cover","variant":"Standard","price":1224},{"key":"BT-075-1","ref":"BT-075","name":"White Leather Four-Leaf Clover Putter Golf Headcover","variant":"Standard","price":1224},{"key":"BT-076-1","ref":"BT-076","name":"Black PU USA Balde Putter Golf Headcover","variant":"Standard","price":1242},{"key":"BT-077-1","ref":"BT-077","name":"Dark Grey Western Style Dog Putter Golf Headcover","variant":"Standard","price":1242},{"key":"BT-078-1","ref":"BT-078","name":"Make Golf Great Again Square Putter Golf Headcover","variant":"Standard","price":1242},{"key":"BT-020-3","ref":"BT-020","name":"88MPH Headcovers Putter Golf Head Cover","variant":"Blade Putter","price":1260},{"key":"BT-070-2","ref":"BT-070","name":"Colorful Golf Tees Golf Large Mallet Putter Head Cover","variant":"Black","price":1260},{"key":"BT-023-4","ref":"BT-023","name":"Dark Yellow Brown Bear Putter Golf Headcover","variant":"Blade Putter","price":1260},{"key":"BT-079-1","ref":"BT-079","name":"Four Aces Poker Large Mallet Putter Headcover","variant":"Black","price":1260},{"key":"BT-080-1","ref":"BT-080","name":"Skull & Ice Cream Head Cover","variant":"Standard","price":1260},{"key":"BT-081-1","ref":"BT-081","name":"YOU WIN Mosaic Boy Blade Putter Head Cover","variant":"Standard","price":1260},{"key":"BT-082-1","ref":"BT-082","name":"Casino Blade Putter Head Cover","variant":"Blade Putter","price":1278},{"key":"BT-083-1","ref":"BT-083","name":"White PU Monster Fish Putter Head Cover","variant":"Mid(Binal Ear)-Mallet Putter","price":1296},{"key":"BT-084-1","ref":"BT-084","name":"Ace and Jack Black Mallet Putter Head Cover","variant":"Standard","price":1314},{"key":"BT-085-1","ref":"BT-085","name":"Colorful Birdie LAB DF3 Putter Head Cover","variant":"Mallet( Single Ear) Putter","price":1314},{"key":"BT-085-2","ref":"BT-085","name":"Colorful Birdie LAB DF3 Putter Head Cover","variant":"Mallet(Binal Ear)Putter","price":1314},{"key":"BT-085-3","ref":"BT-085","name":"Colorful Birdie LAB DF3 Putter Head Cover","variant":"Mid(Binal Ear)-Mallet Putter","price":1314},{"key":"BT-085-4","ref":"BT-085","name":"Colorful Birdie LAB DF3 Putter Head Cover","variant":"Mid(Single Ear)-Mallet Putter","price":1314},{"key":"BT-086-1","ref":"BT-086","name":"Crocodile Pattern Stitching Blue Bird Putter Golf Headcover","variant":"Mallet Putter","price":1314},{"key":"BT-087-1","ref":"BT-087","name":"Green White Splice BUSHWOOD Magnet DF3 Mallet Putter Head Cover","variant":"Standard","price":1314},{"key":"BT-088-1","ref":"BT-088","name":"Monkey Suit Blade Putter Golf Headcover","variant":"Blade Putter","price":1314},{"key":"BT-089-1","ref":"BT-089","name":"Bulldog Plush Putter Animal Golf Headcover (with mountaineering buckle)","variant":"Standard","price":1332},{"key":"BT-090-1","ref":"BT-090","name":"Clown Plush Magnet OZ. 1 Putter Covers","variant":"Standard","price":1332},{"key":"BT-091-1","ref":"BT-091","name":"Green Have a Lucky Day Blade Putter Head Cover","variant":"Standard","price":1332},{"key":"BT-088-2","ref":"BT-088","name":"Monkey Suit Blade Putter Golf Headcover","variant":"Square Putter","price":1332},{"key":"BT-092-1","ref":"BT-092","name":"Red One More Time DF3 Mallet Putter Golf Headcover","variant":"Standard","price":1332},{"key":"BT-093-1","ref":"BT-093","name":"White Eyeglass&Pineapple Putter Head Cover","variant":"Mallet Putter","price":1350},{"key":"BT-094-1","ref":"BT-094","name":"TIKI Square Putter Golf Headcover","variant":"Standard","price":1368},{"key":"BT-072-2","ref":"BT-072","name":"Black Mine Magnetic Single Ear Head Cover Set","variant":"Blade Putter","price":1377},{"key":"BT-095-1","ref":"BT-095","name":"Azalea Mallet DF3 Golf Putter Cover","variant":"Standard","price":1386},{"key":"BT-096-1","ref":"BT-096","name":"Black PU Clover Putter Golf Headcover","variant":"Blade Putter","price":1386},{"key":"BT-097-1","ref":"BT-097","name":"Blue Crocodile Graffiti Bird Driver Golf Headcover","variant":"Standard","price":1386},{"key":"BT-098-1","ref":"BT-098","name":"Blue Yellow Pink Green Splice Putter Golf Headcover","variant":"Standard","price":1386},{"key":"BT-099-1","ref":"BT-099","name":"Brown Pug Square Putter Head Cover","variant":"Standard","price":1386},{"key":"BT-100-1","ref":"BT-100","name":"Flamingo DF3 Mallet Putter Golf Head Cover","variant":"Standard","price":1386},{"key":"BT-101-1","ref":"BT-101","name":"Four-leaf Clover Binaural Magnet DF3 Golf Putter Cover","variant":"Standard","price":1386},{"key":"BT-102-1","ref":"BT-102","name":"PAR Blade Putter Golf Headcover","variant":"Standard","price":1386},{"key":"BT-103-1","ref":"BT-103","name":"Tiger DF3 Mallet Putter Golf Head Cover","variant":"Standard","price":1386},{"key":"BT-104-1","ref":"BT-104","name":"White French Bulldog Square Putter Head Cover","variant":"Standard","price":1386},{"key":"BT-105-1","ref":"BT-105","name":"Blue Sharks Putter Head Cover","variant":"Standard","price":1404},{"key":"BT-106-1","ref":"BT-106","name":"Blue Tit Blade Putter Head Cover","variant":"Standard","price":1440},{"key":"BT-107-1","ref":"BT-107","name":"Retro Brown Magnetic Putter Golf Headcover","variant":"Mid(Binal Ear)-Mallet Putter","price":1440},{"key":"BT-108-1","ref":"BT-108","name":"Black Bowknot Putter Golf Headcover","variant":"Standard","price":1458},{"key":"BT-109-1","ref":"BT-109","name":"Brown Cow Square Putter Golf Headcover","variant":"Standard","price":1458},{"key":"BT-110-1","ref":"BT-110","name":"Gingerbread Man Brown Putter Golf Headcover","variant":"Mallet(Binal Ear)Putter","price":1458},{"key":"BT-111-1","ref":"BT-111","name":"Hibiscus Embroidery Putter Golf Headcover","variant":"Standard","price":1458},{"key":"BT-112-1","ref":"BT-112","name":"Marlboro Again Putter Golf Headcover","variant":"Standard","price":1458},{"key":"BT-113-1","ref":"BT-113","name":"Pink Heart Putter Golf Headcover","variant":"Blade Putter","price":1458},{"key":"BT-113-2","ref":"BT-113","name":"Pink Heart Putter Golf Headcover","variant":"Mallet Putter","price":1458},{"key":"BT-114-1","ref":"BT-114","name":"Red Brown Gingerbread Man Putter Golf Headcover","variant":"Standard","price":1458},{"key":"BT-115-1","ref":"BT-115","name":"Tarot Card Blade (Widen) Mallet Black Putter Golf Headcover","variant":"Mallet Putter","price":1458},{"key":"BT-116-1","ref":"BT-116","name":"This is Fine Dog DF3 Mallet Putter Golf Cover","variant":"Standard","price":1458},{"key":"BT-083-2","ref":"BT-083","name":"White PU Monster Fish Putter Head Cover","variant":"Mallet Putter","price":1494},{"key":"BT-117-1","ref":"BT-117","name":"Aliens Mallet Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-118-1","ref":"BT-118","name":"Banana Plush Blade Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-119-1","ref":"BT-119","name":"Brown Hollowed-out Putter Golf Head Cover","variant":"Blade Putter","price":1500},{"key":"BT-119-2","ref":"BT-119","name":"Brown Hollowed-out Putter Golf Head Cover","variant":"Mallet(Binal Ear)Putter","price":1500},{"key":"BT-119-3","ref":"BT-119","name":"Brown Hollowed-out Putter Golf Head Cover","variant":"Mid(Binal Ear)-Mallet Putter","price":1500},{"key":"BT-119-4","ref":"BT-119","name":"Brown Hollowed-out Putter Golf Head Cover","variant":"Mid(Single Ear)-Mallet Putter","price":1500},{"key":"BT-120-1","ref":"BT-120","name":"Cute Dogs Brown Putter Golf Head Cover","variant":"Mallet( Single Ear) Putter","price":1500},{"key":"BT-120-2","ref":"BT-120","name":"Cute Dogs Brown Putter Golf Head Cover","variant":"Mid(Binal Ear)-Mallet Putter","price":1500},{"key":"BT-121-1","ref":"BT-121","name":"Dark Green Rhododendron Driver Golf Head Cover","variant":"Blade Putter","price":1500},{"key":"BT-121-2","ref":"BT-121","name":"Dark Green Rhododendron Driver Golf Head Cover","variant":"Mallet Putter","price":1500},{"key":"BT-122-1","ref":"BT-122","name":"Eagle Blade Putter Head Cover","variant":"Standard","price":1500},{"key":"BT-123-1","ref":"BT-123","name":"Flower Bird Magnet Blade Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-124-1","ref":"BT-124","name":"Green Pink Check Putter Golf Headcover","variant":"Blade Putter","price":1500},{"key":"BT-124-2","ref":"BT-124","name":"Green Pink Check Putter Golf Headcover","variant":"Mallet( Single Ear) Putter","price":1500},{"key":"BT-124-3","ref":"BT-124","name":"Green Pink Check Putter Golf Headcover","variant":"Mid(Binal Ear)-Mallet Putter","price":1500},{"key":"BT-125-1","ref":"BT-125","name":"Light Blue Peach Putter Golf Headcover","variant":"Blade Putter","price":1500},{"key":"BT-125-2","ref":"BT-125","name":"Light Blue Peach Putter Golf Headcover","variant":"Mallet( Single Ear) Putter","price":1500},{"key":"BT-126-1","ref":"BT-126","name":"Light Green PU OZ.1 Mallet Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-127-1","ref":"BT-127","name":"No Bad Days On The Course Pink Putter Golf Head Cover","variant":"Mallet Putter","price":1500},{"key":"BT-128-1","ref":"BT-128","name":"Nutcracker Blade Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-129-1","ref":"BT-129","name":"Orangutan Embroidery Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-130-1","ref":"BT-130","name":"Purple Monster Golf Blade Putter Head Cover","variant":"Standard","price":1500},{"key":"BT-131-1","ref":"BT-131","name":"Purple PU $100 Putter Golf Headcover","variant":"Square Putter","price":1500},{"key":"BT-132-1","ref":"BT-132","name":"Red USA Eagle OZ.1 Mallet Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-133-1","ref":"BT-133","name":"Retro Green Putter Golf Head Cover","variant":"Standard","price":1500},{"key":"BT-134-1","ref":"BT-134","name":"Stuffed Straight Blade Putter Plush Headcover","variant":"Standard","price":1500},{"key":"BT-135-1","ref":"BT-135","name":"Sunglasses King Putter Head Cover","variant":"Blade Putter","price":1500},{"key":"BT-135-2","ref":"BT-135","name":"Sunglasses King Putter Head Cover","variant":"Square Putter","price":1500},{"key":"BT-136-1","ref":"BT-136","name":"Taco Hamburger Beard Mallet Head Cover","variant":"Standard","price":1500},{"key":"BT-137-1","ref":"BT-137","name":"White Joker OZ.1 Mallet Putter Golf Headcover","variant":"Standard","price":1500},{"key":"BT-138-1","ref":"BT-138","name":"White PU Bird Milkshake Putter Golf Head Cover","variant":"Blade Putter","price":1500},{"key":"BT-138-2","ref":"BT-138","name":"White PU Bird Milkshake Putter Golf Head Cover","variant":"Square Putter","price":1500},{"key":"BT-083-3","ref":"BT-083","name":"White PU Monster Fish Putter Head Cover","variant":"Blade Putter","price":1500},{"key":"BT-083-4","ref":"BT-083","name":"White PU Monster Fish Putter Head Cover","variant":"Square Putter","price":1500}]}</script>
+<script>
+(() => {
+  const ORDER_EMAIL = "baldwintree@proton.me";
+  const STORE = "putter-cover-order-v1";
+  const data = JSON.parse(document.getElementById("catalogue").textContent);
+  const rowsByKey = new Map(data.rows.map((r) => [r.key, r]));
+  const products = [];
+  const byRef = new Map();
+  for (const r of data.rows) {
+    if (!byRef.has(r.ref)) {
+      const p = { ref: r.ref, name: r.name, variants: [] };
+      byRef.set(r.ref, p);
+      products.push(p);
+    }
+    byRef.get(r.ref).variants.push(r);
+  }
+  for (const p of products) {
+    p.variants.sort((a, b) => a.price - b.price || a.variant.localeCompare(b.variant));
+    p.min = p.variants[0].price;
+    p.max = p.variants[p.variants.length - 1].price;
+    p.text = (p.ref + " " + p.name + " " + p.variants.map((v) => v.variant).join(" ")).toLowerCase();
+  }
+
+  const money = (cents) => "$" + (cents / 100).toFixed(2);
+  const image = (ref) => "img/" + ref + ".jpg";
+  let qty = {};
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || "{}");
+    for (const [k, v] of Object.entries(saved))
+      if (rowsByKey.has(k) && Number.isInteger(v) && v > 0 && v <= 99) qty[k] = v;
+  } catch {}
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(qty)); } catch {} };
+
+  const grid = document.getElementById("grid");
+  const search = document.getElementById("search");
+  const sort = document.getElementById("sort");
+  const onlyPicked = document.getElementById("only-picked");
+
+  function stepper(key, label) {
+    const n = qty[key] || 0;
+    return '<div class="stepper" data-key="' + key + '">' +
+      '<button type="button" data-step="-1" aria-label="One fewer ' + label + '"' + (n ? "" : " disabled") + '>−</button>' +
+      '<output aria-label="Quantity of ' + label + '">' + n + '</output>' +
+      '<button type="button" data-step="1" aria-label="One more ' + label + '"' + (n >= 99 ? " disabled" : "") + '>+</button></div>';
+  }
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+  function render() {
+    const q = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let list = products.filter((p) => q.every((w) => p.text.includes(w)));
+    if (onlyPicked.getAttribute("aria-pressed") === "true")
+      list = list.filter((p) => p.variants.some((v) => qty[v.key]));
+    const s = sort.value;
+    list.sort((a, b) =>
+      s === "price-asc" ? a.min - b.min || a.ref.localeCompare(b.ref) :
+      s === "price-desc" ? b.max - a.max || a.ref.localeCompare(b.ref) :
+      s === "name" ? a.name.localeCompare(b.name) : a.ref.localeCompare(b.ref));
+    grid.innerHTML = list.map((p) => {
+      const picked = p.variants.some((v) => qty[v.key]);
+      return '<li class="card' + (picked ? " picked" : "") + '">' +
+        '<div class="photo"><img src="' + image(p.ref) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async" width="240" height="240"></div>' +
+        '<div class="body"><p class="ref">' + p.ref + '</p><h2 class="name">' + esc(p.name) + '</h2>' +
+        '<ul class="variants">' + p.variants.map((v) =>
+          '<li class="variant"><span class="vname">' + esc(v.variant) + '</span><span class="price">' + money(v.price) + '</span>' +
+          stepper(v.key, esc(p.name + ", " + v.variant)) + '</li>').join("") +
+        '</ul></div></li>';
+    }).join("");
+    document.getElementById("empty").hidden = list.length > 0;
+    document.getElementById("count").textContent =
+      list.length === products.length ? products.length + " head covers" : list.length + " of " + products.length + " head covers";
+    summarize();
+  }
+
+  function lines() {
+    return data.rows
+      .filter((r) => qty[r.key])
+      .sort((a, b) => a.ref.localeCompare(b.ref) || a.key.localeCompare(b.key, undefined, { numeric: true }))
+      .map((r) => ({ ...r, n: qty[r.key], total: qty[r.key] * r.price }));
+  }
+  function summarize() {
+    const l = lines();
+    const units = l.reduce((a, x) => a + x.n, 0);
+    const sum = l.reduce((a, x) => a + x.total, 0);
+    document.getElementById("summary").innerHTML = units
+      ? "<strong>" + units + (units === 1 ? " cover" : " covers") + " · " + money(sum) + "</strong><span>Before shipping and tax</span>"
+      : "<strong>No items yet</strong><span>Choose quantities to build your order</span>";
+    document.getElementById("review").disabled = !units;
+    return { l, units, sum };
+  }
+
+  function setQty(key, delta) {
+    const next = Math.max(0, Math.min(99, (qty[key] || 0) + delta));
+    if (next) qty[key] = next; else delete qty[key];
+    save();
+  }
+
+  grid.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-step]");
+    if (!b) return;
+    const box = b.closest(".stepper");
+    setQty(box.dataset.key, Number(b.dataset.step));
+    const n = qty[box.dataset.key] || 0;
+    box.querySelector("output").textContent = n;
+    box.querySelector('[data-step="-1"]').disabled = !n;
+    box.querySelector('[data-step="1"]').disabled = n >= 99;
+    const card = box.closest(".card");
+    const ref = rowsByKey.get(box.dataset.key).ref;
+    card.classList.toggle("picked", byRef.get(ref).variants.some((v) => qty[v.key]));
+    summarize();
+  });
+  search.addEventListener("input", render);
+  sort.addEventListener("change", render);
+  onlyPicked.addEventListener("click", () => {
+    onlyPicked.setAttribute("aria-pressed", onlyPicked.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    render();
+  });
+
+  const dialog = document.getElementById("dialog");
+  function orderText(l, units, sum) {
+    const out = ["Putter head cover order", ""];
+    for (const x of l) {
+      out.push(x.ref + "  " + x.name);
+      out.push("   " + x.variant + "  x" + x.n + "  @ " + money(x.price) + " = " + money(x.total));
+    }
+    out.push("", "Total covers: " + units, "Subtotal: " + money(sum) + " USD (before shipping and tax)",
+      "Shipping: varies with order quantity; please confirm.", "");
+    return out.join("\n");
+  }
+  function renderDialog() {
+    const { l, units, sum } = summarize();
+    if (!units) { dialog.close(); render(); return; }
+    document.getElementById("dlg-sub").textContent = units + (units === 1 ? " cover" : " covers");
+    document.getElementById("lines").innerHTML = l.map((x) =>
+      '<li class="line"><img src="' + image(x.ref) + '" alt="" loading="lazy">' +
+      '<div><div class="lname">' + esc(x.name) + '</div><div class="lmeta">' + x.ref + ' · ' + esc(x.variant) + ' · ' + money(x.price) + ' each</div></div>' +
+      '<div class="right"><strong>' + money(x.total) + '</strong>' + stepper(x.key, esc(x.name + ", " + x.variant)) + '</div></li>').join("");
+    document.getElementById("subtotal").textContent = money(sum);
+    const subject = "Putter head cover order (" + units + (units === 1 ? " cover" : " covers") + ")";
+    document.getElementById("send").href =
+      "mailto:" + ORDER_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(orderText(l, units, sum));
+  }
+  document.getElementById("review").addEventListener("click", () => {
+    document.getElementById("status").textContent = "";
+    renderDialog();
+    dialog.showModal();
+  });
+  document.getElementById("close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("close", render);
+  document.getElementById("lines").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-step]");
+    if (!b) return;
+    setQty(b.closest(".stepper").dataset.key, Number(b.dataset.step));
+    renderDialog();
+  });
+  document.getElementById("send").addEventListener("click", () => {
+    document.getElementById("status").textContent =
+      "Your email app should open with the order filled in. If it doesn't, use Copy order and email it to " + ORDER_EMAIL + ".";
+  });
+  document.getElementById("copy").addEventListener("click", async () => {
+    const { l, units, sum } = summarize();
+    const text = "To: " + ORDER_EMAIL + "\n\n" + orderText(l, units, sum);
+    const status = document.getElementById("status");
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = "Order copied. Paste it into an email to " + ORDER_EMAIL + ".";
+    } catch {
+      status.textContent = "Couldn't copy automatically. Email your order to " + ORDER_EMAIL + ".";
+    }
+  });
+  document.getElementById("clear").addEventListener("click", () => {
+    if (!confirm("Clear every item from your order?")) return;
+    qty = {};
+    save();
+    dialog.close();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
